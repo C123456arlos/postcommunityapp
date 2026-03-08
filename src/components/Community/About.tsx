@@ -7,7 +7,7 @@ import { getDownloadURL, ref, uploadString } from 'firebase/storage'
 import moment from 'moment'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useRef, useState } from 'react'
+import React, { ElementType, useRef, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { FaReddit } from 'react-icons/fa'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
@@ -15,6 +15,7 @@ import { RiCakeLine } from 'react-icons/ri'
 import { useSetRecoilState } from 'recoil'
 type Props = {
     communityData: Community
+    icon: ElementType
 }
 
 const About = ({ communityData }: Props) => {
