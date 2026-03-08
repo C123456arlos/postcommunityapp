@@ -18,7 +18,7 @@ type Props = {
     icon: ElementType
 }
 
-const About = ({ communityData }: Props) => {
+const About = ({ communityData, icon: Icon }: Props) => {
     const [user] = useAuthState(auth)
     const selectedFileRef = useRef<HTMLInputElement>(null)
     const { selectedFile, setSelectedFile, onSelectFile } = useSelectFile()
