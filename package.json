@@ -20,7 +20,7 @@
     "@types/node": "25.3.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "^16.1.6",
     "firebase": "^9.16.0",
     "firebase-functions": "^7.0.6",
     "firebase-tools": "^15.8.0",
@@ -37,6 +37,6 @@
   },
   "devDependencies": {
     "@types/safe-json-stringify": "^1.1.5",
-    "eslint": "^8.0.0"
+    "eslint": "^10.0.3"
   }
 }
