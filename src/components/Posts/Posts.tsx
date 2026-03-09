@@ -8,6 +8,7 @@ import PostItem from './PostItem'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Stack } from '@chakra-ui/react'
 import PostLoader from './PostLoader'
+import { Icon } from '@chakra-ui/icons'
 
 
 type Props = {
@@ -49,7 +50,7 @@ const Posts = ({ communityData }: Props) => {
                 <PostLoader></PostLoader>) :
                 <>
                     <Stack>
-                        {postStateValue.posts.map(item => <PostItem key={item.id}
+                        {postStateValue.posts.map(item => <PostItem icon={Icon} key={item.id} event={event}
                             post={item} userIsCreator={user?.uid === item.creatorId}
                             userVoteValue={postStateValue.postVotes.find(vote => vote.postId === item.id)?.voteValue}
                             onVote={onVote} onSelectPost={onSelectPost} onDeletePost={onDeletePost}></PostItem>)}
