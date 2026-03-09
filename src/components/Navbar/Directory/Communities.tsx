@@ -22,7 +22,8 @@ const Communities = ({ icon: Icon }: Props) => {
                     color={'gray.500'}>modetating
                 </Text>
                 {mySnippets.filter(snippet => snippet.isModerator).map((snippet) => (
-                    <MenuListItem key={snippet.communityId} icon={FaReddit}
+                    <MenuListItem key={snippet.communityId}
+                        icon={FaReddit}
                         displayText={`r/${snippet.communityId}`} link={`/r/${snippet.communityId}`} iconColor='brand.100'
                         imageURL={snippet.imageURL}></MenuListItem>
                 ))}

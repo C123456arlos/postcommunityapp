@@ -1,13 +1,13 @@
 import useDirectory from '@/src/hooks/useDirectory'
 import { Flex, Icon, Image, MenuItem } from '@chakra-ui/react'
 import React from 'react'
-
+import { IconType } from 'react-icons'
 import { ElementType } from 'react'
 
 type Props = {
     displayText: string
     link: string
-    icon: ElementType
+    icon: IconType
     iconColor: string
     imageURL?: string
 }

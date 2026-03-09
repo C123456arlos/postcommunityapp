@@ -16,7 +16,7 @@ type RightContentProps = {
 const RightContent: React.FC<RightContentProps> = ({ user, icon: Icon }) => {
     return (
         <>
-            <AuthModal></AuthModal>
+            <AuthModal icon={Icon}></AuthModal>
             <Flex justify={'center'} align={'center'}>
                 {user ? <Icons icon={Icon}></Icons> : <AuthButtons></AuthButtons>}
                 <UserMenu icon={Icon} user={user}></UserMenu>
