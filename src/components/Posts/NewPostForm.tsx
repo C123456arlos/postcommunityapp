@@ -113,7 +113,7 @@ const NewPostForm = ({ user, communityImageURL }: Props) => {
         >
             <Flex width={'100%'}>
                 {formTabs.map(item => (
-                    <TabItemPost item={item} key={item.title} selected={item.title === selectedTab} setSelectedTab={setSelectedTab}></TabItemPost>
+                    <TabItemPost icon={Icon} item={item} key={item.title} selected={item.title === selectedTab} setSelectedTab={setSelectedTab}></TabItemPost>
                 ))}
             </Flex>
             <Flex p={4}>
