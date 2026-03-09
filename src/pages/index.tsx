@@ -15,6 +15,7 @@ import useCommunityData from '../hooks/useCommunityData'
 import Recomendations from '../components/Community/Recomendations'
 import Premium from '../components/Community/Premium'
 import PersonalHome from '../components/Community/PersonalHome'
+import { Icon } from '@chakra-ui/icons'
 
 
 export default function Home() {
@@ -166,13 +167,13 @@ export default function Home() {
     <>
       <PageContentLayout>
         <>
-          <CreatePostLink></CreatePostLink>
+          <CreatePostLink icon={Icon}></CreatePostLink>
           {loading ? (<PostLoader></PostLoader>) : (
             <>
 
               <Stack>
                 {postStateValue.posts.map(post => (
-                  <PostItem key={post.id} post={post}
+                  <PostItem icon={Icon} key={post.id} post={post} event={event}
                     onSelectPost={onSelectPost} onVote={onVote}
                     userVoteValue={postStateValue.postVotes.find(item => item.postId === post.id)?.voteValue}
                     userIsCreator={user?.uid === post.creatorId} onDeletePost={onDeletePost} homePage></PostItem>
@@ -182,9 +183,9 @@ export default function Home() {
           )}
         </>
         <Stack spacing={5}>
-          <Recomendations></Recomendations>
-          <Premium></Premium>
-          <PersonalHome></PersonalHome>
+          <Recomendations icon={Icon}></Recomendations>
+          <Premium icon={Icon}></Premium>
+          <PersonalHome icon={Icon}></PersonalHome>
         </Stack>
       </PageContentLayout>
 
