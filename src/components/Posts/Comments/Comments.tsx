@@ -7,6 +7,7 @@ import { collection, doc, getDocs, increment, orderBy, query, serverTimestamp, T
 import { firestore } from '@/src/firebase/clientApp'
 import { useSetRecoilState } from 'recoil'
 import CommentItem, { Comment } from './CommentItem'
+import { Icon } from '@chakra-ui/icons'
 type Props = {
     user: User
     selectedPost: Post | null
@@ -121,7 +122,7 @@ const Comments = ({ user, selectedPost, communityId }: Props) => {
                         </Flex>
                     ) : <>
                         {comments.map(comment => (
-                            <CommentItem key={comment.id} comment={comment} onDeleteComment={onDeleteComment} loadingDelete={loadingDeleteId === comment.id}
+                            <CommentItem icon={Icon} key={comment.id} comment={comment} onDeleteComment={onDeleteComment} loadingDelete={loadingDeleteId === comment.id}
                                 userId={user?.uid}></CommentItem>
                         ))}
                     </>}
