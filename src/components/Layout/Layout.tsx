@@ -1,12 +1,15 @@
-import React, { ReactNode } from 'react'
+import React, { ElementType, ReactNode } from 'react'
 import Navbar from '../Navbar/Navbar'
-interface props {
+type Props = {
+    icon: ElementType
     children: React.ReactNode
 }
-const Layout: React.FC<props> = ({ children }) => {
+
+
+const Layout = ({ children, icon: Icon }: Props) => {
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar icon={Icon}></Navbar>
             <main>{children}</main>
         </>
     )
