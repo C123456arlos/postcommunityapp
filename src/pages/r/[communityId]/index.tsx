@@ -11,11 +11,15 @@ import CreatePostLink from '@/src/components/Community/CreatePostLink'
 import Posts from '@/src/components/Posts/Posts'
 import { useRecoilState } from 'recoil'
 import About from '@/src/components/Community/About'
+import { ElementType } from 'react'
+
 type Props = {
+
+    icon: ElementType
     communityData: Community
 }
 
-const CommunityPage: React.FC<Props> = ({ communityData }) => {
+const CommunityPage: React.FC<Props> = ({ communityData, icon: Icon }) => {
     console.log('data', communityData)
     // const setCommunityStateValue = useRecoilState(communityState)
     const [communityStateValue, setCommunityStateValue] =
@@ -32,14 +36,14 @@ const CommunityPage: React.FC<Props> = ({ communityData }) => {
     }, [communityData])
     return (
         <>
-            <Header communityData={communityData}></Header>
+            <Header icon={Icon} communityData={communityData}></Header>
             <PageContent>
                 <>
-                    <CreatePostLink></CreatePostLink>
+                    <CreatePostLink icon={Icon}></CreatePostLink>
                     <Posts communityData={communityData}></Posts>
                 </>
                 <>
-                    <About communityData={communityData}></About>
+                    <About icon={Icon} communityData={communityData}></About>
                 </>
             </PageContent>
         </>
