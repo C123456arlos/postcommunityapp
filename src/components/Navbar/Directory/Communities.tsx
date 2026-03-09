@@ -7,8 +7,10 @@ import { communityState } from '@/src/atoms/communitiesAtom'
 import MenuListItem from './MenuListItem'
 import { FaReddit } from 'react-icons/fa'
 import { ElementType } from 'react'
+import { IconType } from 'react-icons'
 type Props = {
     icon: React.ElementType
+    Icon: IconType
 }
 
 const Communities = ({ icon: Icon }: Props) => {
