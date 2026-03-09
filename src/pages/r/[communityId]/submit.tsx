@@ -4,7 +4,7 @@ import PageContent from '@/src/components/Layout/PageContent'
 import NewPostForm from '@/src/components/Posts/NewPostForm'
 import { auth } from '@/src/firebase/clientApp'
 import useCommunityData from '@/src/hooks/useCommunityData'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Icon, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRecoilValue } from 'recoil'
@@ -23,7 +23,7 @@ const SubmitPostPage = () => {
 
             </>
             <>
-                {communityStateValue.currentCommunity && <About communityData={communityStateValue.currentCommunity}></About>}
+                {communityStateValue.currentCommunity && <About icon={Icon} communityData={communityStateValue.currentCommunity}></About>}
             </>
         </PageContent>
     )
