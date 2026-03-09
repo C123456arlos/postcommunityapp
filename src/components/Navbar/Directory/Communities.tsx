@@ -6,14 +6,17 @@ import { useRecoilValue } from 'recoil'
 import { communityState } from '@/src/atoms/communitiesAtom'
 import MenuListItem from './MenuListItem'
 import { FaReddit } from 'react-icons/fa'
-type Props = {}
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
 
-const Communities = (props: Props) => {
+const Communities = ({ icon: Icon }: Props) => {
     const [open, setOpen] = useState(false)
     const mySnippets = useRecoilValue(communityState).mySnippets
     return (
         <>
-            <CreateCommunityModal open={open} handleClose={() => { setOpen(false) }}></CreateCommunityModal>
+            <CreateCommunityModal icon={Icon} open={open} handleClose={() => { setOpen(false) }}></CreateCommunityModal>
             <Box mb={4} mt={3}>
                 <Text pl={3} mb={1} fontSize={'7pt'} fontWeight={500}
                     color={'gray.500'}>modetating

@@ -1,8 +1,11 @@
 import React from "react";
 import { Flex, Icon, Text, Stack, Button } from "@chakra-ui/react";
 import { GiCheckedShield } from "react-icons/gi";
-
-const Premium: React.FC = () => {
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
+const Premium = ({ icon: Icon }: Props) => {
     return (
         <Flex
             direction="column"

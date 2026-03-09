@@ -29,14 +29,16 @@ import { useSetRecoilState } from "recoil";
 import { firestore } from "../../../firebase/clientApp";
 import useDirectory from '@/src/hooks/useDirectory';
 
+import { ElementType } from 'react'
 
 
 type Props = {
     open: boolean
     handleClose: () => void
+    icon: ElementType
 }
 
-const CreateCommunityModal: React.FC<Props> = ({ open, handleClose }) => {
+const CreateCommunityModal: React.FC<Props> = ({ open, handleClose, icon: Icon }: Props) => {
     const [user] = useAuthState(auth)
     const [communityName, setCommunityName] = useState('')
     const [charsRemaining, setCharsRemaining] = useState(21)

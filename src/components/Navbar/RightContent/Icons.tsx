@@ -3,9 +3,12 @@ import React from 'react'
 import { BsArrowUpRightCircle, BsChatDots } from 'react-icons/bs'
 import { GrAdd } from 'react-icons/gr'
 import { IoFilterCircleOutline, IoNotificationsOutline, IoVideocamOutline } from 'react-icons/io5'
-type Props = {}
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
 
-const Icons = (props: Props) => {
+const Icons = ({ icon: Icon }: Props) => {
     return (
         <Flex>
             <Flex display={{ base: 'none', md: 'flex' }} align={'center'} borderRight={'1px solid'} borderColor={'gray.200'}>

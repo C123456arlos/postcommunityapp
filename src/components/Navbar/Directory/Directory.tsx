@@ -4,7 +4,11 @@ import React from 'react'
 import { TiHome } from 'react-icons/ti'
 import Communities from './Communities'
 import useDirectory from '@/src/hooks/useDirectory'
-const UserMenu: React.FC = () => {
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
+const UserMenu = ({ icon: Icon }: Props) => {
     const { directoryState, toggleMenuOpen } = useDirectory()
     return (
         <Menu isOpen={directoryState.isOpen}>
@@ -30,7 +34,7 @@ const UserMenu: React.FC = () => {
                 </Flex>
             </MenuButton>
             <MenuList>
-                <Communities></Communities>
+                <Communities icon={Icon}></Communities>
             </MenuList>
         </Menu>
     )

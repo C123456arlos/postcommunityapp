@@ -1,14 +1,15 @@
 import { Community } from '@/src/atoms/communitiesAtom'
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react'
 import { relative } from 'node:path'
-import React from 'react'
+import React, { ElementType } from 'react'
 import { FaReddit } from 'react-icons/fa'
 import useCommunityData from '@/src/hooks/useCommunityData'
 type Props = {
     communityData: Community
+    icon: ElementType
 }
 
-const Header = ({ communityData }: Props) => {
+const Header = ({ communityData, icon: Icon }: Props) => {
     const { communityStateValue, onJoinOrLeaveCommunity, loading } = useCommunityData()
     const isJoined = !!communityStateValue.mySnippets.find(item => item.communityId === communityData.id)
     return (

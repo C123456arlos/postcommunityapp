@@ -15,7 +15,10 @@ import {
     IoArrowUpCircleSharp,
     IoBookmarkOutline,
 } from "react-icons/io5";
+import { ElementType } from 'react'
+
 type Props = {
+    icon: ElementType
     post: Post
     userIsCreator: boolean
     userVoteValue?: number
@@ -23,9 +26,10 @@ type Props = {
     onDeletePost: (post: Post) => Promise<boolean>
     onSelectPost?: (post: Post) => void
     homePage?: boolean
+    event: any
 }
 
-const PostItem = ({ post, userIsCreator, userVoteValue, onVote, onDeletePost, onSelectPost, homePage }: Props) => {
+const PostItem = ({ post, userIsCreator, userVoteValue, onVote, onDeletePost, onSelectPost, homePage, icon: Icon, event: any }: Props) => {
     const [loadingImage, setLoadingImage] = useState(true)
     const [error, setError] = useState(false)
     const [loadingDelete, setLoadingDelete] = useState(false)
@@ -55,10 +59,10 @@ const PostItem = ({ post, userIsCreator, userVoteValue, onVote, onDeletePost, on
             <Flex direction={'column'} align={'center'} bg={singlePostPage ? 'none' : 'gray.100'} p={2} width={'40px'}
                 borderRadius={singlePostPage ? '0' : '3px 0px 0px 3px'}>
                 <Icon as={userVoteValue === 1 ? IoArrowUpCircleSharp : IoArrowUpCircleOutline}
-                    color={userVoteValue === 1 ? 'brand.100' : 'gray.400'} fontSize={22} onClick={(event) => onVote(event, post, 1, post.communityId)} cursor={'pointer'}></Icon>
+                    color={userVoteValue === 1 ? 'brand.100' : 'gray.400'} fontSize={22} onClick={(event: any) => onVote(event, post, 1, post.communityId)} cursor={'pointer'}></Icon>
                 <Text fontSize={'9pt'}>{post.voteStatus}</Text>
                 <Icon as={userVoteValue === -1 ? IoArrowDownCircleSharp : IoArrowDownCircleOutline}
-                    color={userVoteValue === -1 ? '#4379ff' : 'gray.400'} fontSize={22} onClick={(event) => onVote(event, post, -1, post.communityId)} cursor={'pointer'}></Icon>
+                    color={userVoteValue === -1 ? '#4379ff' : 'gray.400'} fontSize={22} onClick={(event: any) => onVote(event, post, -1, post.communityId)} cursor={'pointer'}></Icon>
             </Flex>
             <Flex direction={'column'} width={'100%'}>
                 {error && (
@@ -126,7 +130,7 @@ export default PostItem
 
 
 
-
+// 11:26
 
 
 

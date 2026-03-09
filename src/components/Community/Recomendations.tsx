@@ -6,8 +6,11 @@ import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { FaReddit } from 'react-icons/fa'
-
-const Recomendations = () => {
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
+const Recomendations = ({ icon: Icon }: Props) => {
     const [communities, setCommunities] = useState<Community[]>([])
     const [loading, setLoading] = useState(false)
     const { communityStateValue, onJoinOrLeaveCommunity } = useCommunityData()

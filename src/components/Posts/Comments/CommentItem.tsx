@@ -4,6 +4,8 @@ import moment from 'moment'
 import React from 'react'
 import { FaReddit } from 'react-icons/fa'
 import { IoArrowDownCircleOutline, IoArrowUpCircleOutline } from 'react-icons/io5'
+import { ElementType } from 'react'
+
 export type Comment = {
     id: string
     creatorId: string
@@ -16,12 +18,13 @@ export type Comment = {
 }
 type Props = {
     comment: Comment
+    icon: ElementType
     onDeleteComment: (comment: Comment
     ) => void
     loadingDelete: boolean
     userId: string
 }
-const CommentItem = ({ comment, onDeleteComment, loadingDelete, userId }: Props) => {
+const CommentItem = ({ comment, onDeleteComment, loadingDelete, userId, icon: Icon }: Props) => {
     return (
         <Flex>
             <Box>

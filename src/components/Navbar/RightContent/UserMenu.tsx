@@ -12,12 +12,14 @@ import { useResetRecoilState, useSetRecoilState } from 'recoil'
 import { AuthModalState } from '@/src/atoms/authModalAtom'
 import { IoSparkles } from 'react-icons/io5'
 import { communityState } from '@/src/atoms/communitiesAtom'
+import { ElementType } from 'react'
 
 type Props = {
+    icon: ElementType
     user?: User | null
 }
 
-const UserMenu: React.FC<Props> = ({ user }) => {
+const UserMenu: React.FC<Props> = ({ user, icon: Icon }) => {
     // const resetCommunityState = useResetRecoilState(communityState)
     const setAuthModalState = useSetRecoilState(AuthModalState)
     const logout = async () => {

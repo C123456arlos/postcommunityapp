@@ -1,6 +1,6 @@
 import { Flex, Icon, Input } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { ElementType } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { BsLink45Deg } from 'react-icons/bs'
 import { FaReddit } from 'react-icons/fa'
@@ -9,7 +9,10 @@ import { useSetRecoilState } from 'recoil'
 import { AuthModalState } from '@/src/atoms/authModalAtom'
 import { auth } from '@/src/firebase/clientApp'
 import useDirectory from '@/src/hooks/useDirectory'
-const CreatePostLink = () => {
+type Props = {
+    icon: ElementType
+}
+const CreatePostLink = ({ icon: Icon }: Props) => {
     const router = useRouter()
     const [user] = useAuthState(auth)
     const { toggleMenuOpen } = useDirectory()

@@ -5,7 +5,11 @@ import { AuthModalState } from '@/src/atoms/authModalAtom'
 import { auth } from '@/src/firebase/clientApp'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth'
-const ResetPassword: React.FC = () => {
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
+const ResetPassword = ({ icon: Icon }: Props) => {
     // const setAuthModalState = useRecoilState(AuthModalState)
 
     const setAuthModalState = useSetRecoilState(AuthModalState);
