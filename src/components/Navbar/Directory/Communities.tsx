@@ -8,7 +8,7 @@ import MenuListItem from './MenuListItem'
 import { FaReddit } from 'react-icons/fa'
 import { ElementType } from 'react'
 type Props = {
-    icon: React.ElementType
+    icon: ElementType
 }
 
 const Communities = ({ icon: Icon }: Props) => {
