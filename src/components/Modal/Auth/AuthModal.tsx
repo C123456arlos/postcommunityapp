@@ -8,8 +8,12 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/src/firebase/clientApp'
 import ResetPassword from './ResetPassword'
 
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
 
-const AuthModal = () => {
+const AuthModal = ({ icon: Icon }: Props) => {
     // const [modalState, setModalState] = useRecoilState(AuthModalState)
     // const [user, loading, error] = useAuthState(auth)
     // const handleClose = () => {
@@ -47,7 +51,7 @@ const AuthModal = () => {
                                     <AuthInputs></AuthInputs>
                                 </>
                             ) :
-                                <ResetPassword></ResetPassword>
+                                <ResetPassword icon={Icon}></ResetPassword>
                             }
                         </Flex>
                     </ModalBody>
