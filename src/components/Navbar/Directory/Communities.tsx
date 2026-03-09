@@ -8,7 +8,7 @@ import MenuListItem from './MenuListItem'
 import { FaReddit } from 'react-icons/fa'
 import { ElementType } from 'react'
 type Props = {
-    icon: ElementType
+    icon: React.ElementType
 }
 
 const Communities = ({ icon: Icon }: Props) => {
@@ -22,10 +22,25 @@ const Communities = ({ icon: Icon }: Props) => {
                     color={'gray.500'}>modetating
                 </Text>
                 {mySnippets.filter(snippet => snippet.isModerator).map((snippet) => (
+
+
+
+
+
+
                     <MenuListItem key={snippet.communityId}
                         icon={FaReddit}
                         displayText={`r/${snippet.communityId}`} link={`/r/${snippet.communityId}`} iconColor='brand.100'
                         imageURL={snippet.imageURL}></MenuListItem>
+
+
+
+
+
+
+
+
+
                 ))}
             </Box>
             <Box mb={4} mt={3}>

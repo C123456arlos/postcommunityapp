@@ -6,7 +6,7 @@ import { atom } from 'recoil'
 export type DirectoryMenuItem = {
     displayText: string
     link: string
-    icon: ElementType | IconType
+    icon: any
     iconColor: string
     imageURL?: string
 }
