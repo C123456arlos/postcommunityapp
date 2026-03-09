@@ -7,7 +7,7 @@ import { ElementType } from 'react'
 type Props = {
     displayText: string
     link: string
-    icon: IconType
+    icon: ElementType
     iconColor: string
     imageURL?: string
 }
