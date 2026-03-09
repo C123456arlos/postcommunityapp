@@ -6,6 +6,7 @@ import PostItem from '@/src/components/Posts/PostItem'
 import { auth, firestore } from '@/src/firebase/clientApp'
 import useCommunityData from '@/src/hooks/useCommunityData'
 import usePosts from '@/src/hooks/usePosts'
+import { Icon } from '@chakra-ui/icons'
 import { User } from 'firebase/auth'
 import { doc, getDoc } from 'firebase/firestore'
 import { useRouter } from 'next/router'
@@ -37,14 +38,14 @@ const Postpage = () => {
     return (
         <PageContent>
             <>
-                {postStateValue.selectedPost && <PostItem post={postStateValue.selectedPost} onVote={onVote} onDeletePost={onDeletePost}
+                {postStateValue.selectedPost && <PostItem event={event} icon={Icon} post={postStateValue.selectedPost} onVote={onVote} onDeletePost={onDeletePost}
                     userVoteValue={postStateValue.postVotes.find(item =>
                         item.postId === postStateValue.selectedPost?.id)?.voteValue}
                     userIsCreator={user?.uid === postStateValue.selectedPost?.creatorId}></PostItem>}
                 <Comments user={user as User} selectedPost={postStateValue.selectedPost} communityId={postStateValue.selectedPost?.communityId as string}></Comments>
             </>
             <>
-                {communityStateValue.currentCommunity && (<About communityData={communityStateValue.currentCommunity}></About>)}
+                {communityStateValue.currentCommunity && (<About icon={Icon} communityData={communityStateValue.currentCommunity}></About>)}
             </>
         </PageContent>
     )
