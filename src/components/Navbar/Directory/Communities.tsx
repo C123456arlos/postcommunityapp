@@ -10,7 +10,7 @@ import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 type Props = {
     icon: React.ElementType
-    Icon: IconType
+
 }
 
 const Communities = ({ icon: Icon }: Props) => {
