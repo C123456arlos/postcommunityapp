@@ -7,7 +7,12 @@ import { auth } from '@/src/firebase/clientApp'
 import Directory from '@/src/components/Navbar/Directory/Directory'
 import useDirectory from '@/src/hooks/useDirectory'
 import { defaultMenuitem } from '@/src/atoms/DirectoryMenuAtom'
-const Navbar = () => {
+import { ElementType } from 'react'
+type Props = {
+    icon: ElementType
+}
+
+const Navbar = ({ icon: Icon }: Props) => {
     const [user, loading, error] = useAuthState(auth)
     const { onSelectMenuItem } = useDirectory()
     return (
@@ -17,9 +22,9 @@ const Navbar = () => {
                 <Image src='/images/redditicon.svg' height={'20px'}></Image>
                 <Image src='/images/reddittext.svg' height={'46px'} display={{ base: 'none', md: 'unset' }}></Image>
             </Flex>
-            {user && <Directory></Directory>}
+            {user && <Directory icon={Icon}></Directory>}
             <SearchInput user={user}></SearchInput>
-            <RightContent user={user}></RightContent>
+            <RightContent icon={Icon} user={user}></RightContent>
         </Flex>
     )
 }

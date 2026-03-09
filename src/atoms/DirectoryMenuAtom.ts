@@ -1,11 +1,12 @@
 import { link } from 'node:fs'
+import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 import { TiHome } from 'react-icons/ti'
 import { atom } from 'recoil'
 export type DirectoryMenuItem = {
     displayText: string
     link: string
-    icon: IconType
+    icon: ElementType
     iconColor: string
     imageURL?: string
 }
